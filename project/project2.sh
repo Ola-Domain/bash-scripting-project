@@ -7,43 +7,41 @@ sleep 1
 echo "This is a simple calculator $name"
 sleep 1
 echo "It will calculate"
-sleep 3
+sleep 2
 echo "Uh un you're thinking if it gonna work out"
-sleep 3
+sleep 1
 echo "Well it will calculate Addition, Subtration, Multiplication and Divition"
-sleep 2
+sleep 1
 sum=0
-i="y"
+ans="y"
 echo "enter one no."
-read $n1
+read a
 echo "enter second no."
-read $n2
-sleep 2
+read b
+
 echo "1.Addition"
 echo "2.Subtraction"
 echo "3.Multiplication"
 echo "4.Division"
-sleep 3
-echo "Enter your choice"
-read choice
 
-	1)sum=echo $(($1 + $n2))
-	echo "Sum="$sum;;
-	2)sum='expr $n1 - $n2'
-	echo "Sum =  "$sum;;
-	3)sum= 'expr $n1 * $n2'
-	echo "Mul = "$sum;;
-	4)sum= 'expr $n1 / $n2'
-	echo "Div = "$sum;;
+echo "Enter your choice"
+read ch
+case $ch in
+	1)s=$(( $a + $b ))
+	echo "Sum="$s;;
+	2)s=$(( $a - $b ))
+	echo "Sum =  "$s;;
+	3)s=$(( $a * $b ))
+	echo "Mul = "$s;;
+	4)s=$(( $a / $b ))
+	echo "Div = "$s;;
 
 	*)echo "Invalid choice";;
 esac
-sleep2
-echo "Do you want to continue?"
-read  i
-if [ $i != "y"]
-then 
+echo "Do you want to continue ?"
+read ans
+if [$ans !="y"]
+then
 	exit
 fi
 done
-
